@@ -34,7 +34,7 @@ export class Category {
         },
     };
 
-    constructor(private navParams: NavParams) {
+    constructor(private navParams: NavParams, private nav:NavController) {
 
     }
 
@@ -79,6 +79,9 @@ export class Category {
     }
 
     changeFontFamily() {
-        if (this.fontFamily) this.textEle.style.fontFamily = this.fontFamily;
+        if (this.fontFamily) {
+            this.textEle.style.fontFamily = this.fontFamily;
+
+        }
     }
 }

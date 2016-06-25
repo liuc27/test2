@@ -14,9 +14,11 @@ export class ProductDetails {
     @ViewChild('popoverContent', {read: ElementRef}) content: ElementRef;
     @ViewChild('popoverText', {read: ElementRef}) text: ElementRef;
     product;
+    productOrShop;
 
     constructor(private params: NavParams,private nav:NavController) {
         this.product = params.data.product;
+        this.productOrShop = "product";
         console.log(params.data);
     }
 
