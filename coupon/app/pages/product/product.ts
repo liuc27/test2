@@ -11,7 +11,8 @@ import {ProductDetails} from './productDetails/productDetails';
 export class ProductPage {
   public products:any;
   public product:any;
-  
+
+
   constructor(private navController:NavController, 
               private params:NavParams,
               public productService:ProductService,
