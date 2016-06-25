@@ -1,0 +1,48 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+    Shop
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="shop">
+  <div padding>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="kittens">
+        Kittens
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        Puppies
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchWhen="'puppies'">
+
+      <div class="card-background-page">
+
+        <ion-card>
+          <img src="img/card-saopaolo.png"/>
+          <div class="card-title">São Paulo</div>
+          <div class="card-subtitle">41 Listings</div>
+        </ion-card>
+
+      </div>
+      ...
+    </ion-list>
+
+    <ion-list *ngSwitchWhen="'kittens'">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+      ...
+    </ion-list>
+  </div>
+
+
+
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-navbar hideBackButton *navbar>
+    <div padding>
+        <ion-segment [(ngModel)]="pet">
+            <ion-segment-button value="kittens">
+                Kittens
+            </ion-segment-button>
+            <ion-segment-button value="puppies">
+                Puppies
+            </ion-segment-button>
+            <ion-segment-button value="birds">
+                Birds
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+</ion-navbar>
+
+<ion-content class="productDetails">
+
+
+
+    <div [ngSwitch]="pet">
+        <ion-list *ngSwitchWhen="'puppies'">
+
+            <div class="card-background-page">
+                <ion-card>
+                    <img src="img/card-saopaolo.png"/>
+                    <div class="card-title">São Paulo</div>
+                    <div class="card-subtitle">41 Listings</div>
+                </ion-card>
+            </div>
+        </ion-list>
+
+        <ion-list *ngSwitchWhen="'kittens'">
+            <div class="card-background-page">
+                <ion-card>
+                    <img src="img/card-saopaolo.png"/>
+                    <div class="card-title">São Paulo</div>
+                    <div class="card-subtitle">41 Listings</div>
+                </ion-card>
+            </div>
+        </ion-list>
+
+        <ion-list *ngSwitchWhen="'birds'">
+            <div class="card-background-page">
+                <ion-card>
+                    <img src="img/card-saopaolo.png"/>
+                    <div class="card-title">São Paulo</div>
+                    <div class="card-subtitle">41 Listings</div>
+                </ion-card>
+                <ion-card>
+                    <img src="img/card-saopaolo.png"/>
+                    <div class="card-title">São Paulo</div>
+                    <div class="card-subtitle">41 Listings</div>
+                </ion-card>
+            </div>
+        </ion-list>
+
+    </div>
+
+</ion-content>
