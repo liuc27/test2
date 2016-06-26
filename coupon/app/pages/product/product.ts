@@ -80,4 +80,5 @@ export class ProductPage {
   openProductDetailsPage(product){
     this.navController.push(ProductDetails,{product:product});
   }
+
 }

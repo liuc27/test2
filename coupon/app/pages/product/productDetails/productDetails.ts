@@ -2,7 +2,7 @@
  * Created by liuchao on 6/25/16.
  */
 import {Component, ViewChild, ElementRef} from '@angular/core';
-import {App, NavController, NavParams, Popover,} from 'ionic-angular';
+import {Page,App, NavController, NavParams, Popover,} from 'ionic-angular';
 import {Category} from "./popoverPages/category";
 import {Location} from "./popoverPages/location";
 import {Order} from "./popoverPages/order";
@@ -56,5 +56,10 @@ export class ProductDetails {
         this.nav.present(order, {
             ev: ev
         });
+    }
+
+    onPageWillEnter() {
+        console.log("this");
+       document.querySelector('#tabs ion-tabbar-section').style.display = "none";
     }
 }

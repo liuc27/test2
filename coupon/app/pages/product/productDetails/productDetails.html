@@ -1,14 +1,24 @@
-<ion-navbar  *navbar>
-    <div padding>
-        <ion-segment [(ngModel)]="productOrShop">
-            <ion-segment-button value="product">
-                category
-            </ion-segment-button>
-            <ion-segment-button value="shop">
-                location
-            </ion-segment-button>
-        </ion-segment>
-    </div>
+<ion-navbar  *navbar hideBackButton hideTabBar>
+    <ion-buttons start>
+        <div block button nav-pop>
+            <ion-icon name="ios-arrow-back"></ion-icon>
+            Back
+        </div>
+    </ion-buttons>
+
+
+    <ion-segment [(ngModel)]="productOrShop">
+        <ion-segment-button value="product">
+            category
+        </ion-segment-button>
+        <ion-segment-button value="shop">
+            location
+        </ion-segment-button>
+    </ion-segment>
+
+
+
+
     <ion-buttons end>
         <button>
             <ion-icon name="ios-search"></ion-icon>
@@ -17,7 +27,6 @@
 </ion-navbar>
 
 <ion-content  #popoverContent class="productDetails">
-
     <ion-segment [(ngModel)]="pet2">
         <ion-segment-button value="kittens"  (click)="presentCategoryPopover($event)">
             category

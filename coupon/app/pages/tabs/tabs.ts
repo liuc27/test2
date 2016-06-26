@@ -11,6 +11,7 @@ export class TabsPage {
   private tab1Root: any;
   private tab2Root: any;
   private tab3Root: any;
+  public show;
 
   constructor() {
     // this tells the tabs component which Pages
@@ -18,5 +19,7 @@ export class TabsPage {
     this.tab1Root = ProductPage;
     this.tab2Root = ShopPage;
     this.tab3Root = SettingsPage;
+
+    this.show="true";
   }
 }
