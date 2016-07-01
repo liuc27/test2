@@ -6,10 +6,10 @@ import {NavController, NavParams} from 'ionic-angular';
 
 
 @Component({
-    templateUrl: 'build/pages/shop/shopLists/popoverPages/location.html',
+    templateUrl: 'build/pages/shop/shopDetail/popoverPages/order.html',
 })
 
-export class Location {
+export class Order {
     background: string;
     contentEle: any;
     textEle: any;

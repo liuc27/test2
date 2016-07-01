@@ -6,10 +6,10 @@ import {NavController, NavParams} from 'ionic-angular';
 
 
 @Component({
-    templateUrl: 'build/pages/shop/shopLists/popoverPages/order.html',
+    templateUrl: 'build/pages/shop/shopDetail/popoverPages/category.html',
 })
 
-export class Order {
+export class Category {
     background: string;
     contentEle: any;
     textEle: any;
@@ -34,7 +34,7 @@ export class Order {
         },
     };
 
-    constructor(private navParams: NavParams) {
+    constructor(private navParams: NavParams, private nav:NavController) {
 
     }
 
@@ -79,6 +79,9 @@ export class Order {
     }
 
     changeFontFamily() {
-        if (this.fontFamily) this.textEle.style.fontFamily = this.fontFamily;
+        if (this.fontFamily) {
+            this.textEle.style.fontFamily = this.fontFamily;
+
+        }
     }
 }

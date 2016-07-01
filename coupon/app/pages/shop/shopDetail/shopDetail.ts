@@ -6,34 +6,34 @@ import {Page,App, Events, NavController, NavParams, Popover,} from 'ionic-angula
 import {Category} from "./popoverPages/category";
 import {Location} from "./popoverPages/location";
 import {Order} from "./popoverPages/order";
-import {getSelectedShopLists} from '../../../providers/shopLists-GetSelectedShopLists-service/shopLists-GetSelectedShopLists-service';
+import {getSelectedShopDetail} from '../../../providers/shopDetail-GetSelectedShopDetail-service/shopDetail-GetSelectedShopDetail-service';
 
 @Component({
-    templateUrl: 'build/pages/shop/shopLists/shopLists.html',
-    providers:[getSelectedShopLists]
+    templateUrl: 'build/pages/shop/shopDetail/shopDetail.html',
+    providers:[getSelectedShopDetail]
 })
-export class ShopLists {
+export class ShopDetail {
     @ViewChild('popoverContent', {read: ElementRef}) content: ElementRef;
     @ViewChild('popoverText', {read: ElementRef}) text: ElementRef;
     shop;
     productOrShop;
-    shopLists;
+    shopDetail;
 
     constructor(private params: NavParams,
     private nav:NavController,
     private events: Events,
-    public shopListsService:getSelectedShopLists) {
+    public shopDetailService:getSelectedShopDetail) {
         this.shop = params.data.shop;
         this.productOrShop = "shop";
         console.log(params.data);
-        this.loadSelectedShopLists();
+        this.loadSelectedShopDetail();
     }
 
-    loadSelectedShopLists() {
-      this.shopListsService.load()
+    loadSelectedShopDetail() {
+      this.shopDetailService.load()
           .then(data => {
-            this.shopLists = data;
-            console.log(this.shopLists);
+            this.shopDetail = data;
+            console.log(this.shopDetail);
           });
     }
 

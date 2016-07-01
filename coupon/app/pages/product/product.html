@@ -18,10 +18,10 @@
     <ion-slide>
 
     <ion-row class="flexWrap">
-      <ion-col width-20  align="center" *ngFor="let product of products" >
+      <ion-col width-20  class="ion-col-class" *ngFor="let product of products" >
         <button class="roundButton"  primary (click)="openProductListsPage(product)" [ngStyle]="{'backgroundColor': red}">
           <!--[ngStyle]="{'backgroundColor': item.color}" -->
-          <ion-icon name="heart"></ion-icon>
+          <ion-icon class="ion-icon-class" name="heart"></ion-icon>
         </button>food
       </ion-col>
     </ion-row>

@@ -7,7 +7,7 @@ import {Category} from "./popoverPages/category";
 import {Location} from "./popoverPages/location";
 import {Order} from "./popoverPages/order";
 import {ShopGetAllShopsService} from '../../providers/shop-get-all-shops-service/shop-get-all-shops-service';
-import {ShopLists} from './shopLists/shopLists';
+import {ShopDetail} from './shopDetail/shopDetail';
 
 @Component({
     templateUrl: 'build/pages/shop/shop.html',
@@ -42,7 +42,7 @@ export class ShopPage {
 
     openshopDetailPage(shop){
         console.log(shop);
-        this.nav.push(ShopLists,{shop:shop});
+        this.nav.push(ShopDetail,{shop:shop});
 
     }
     presentCategoryPopover(ev) {

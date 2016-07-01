@@ -8,15 +8,22 @@
   }
 
 
+  .ion-col-class{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+  }
   .roundButton{
       width: 11vw;
       height:11vw;
       border-radius: 11vw;
       border:0;
       overflow:hidden;
-      margin: 1vw;
       box-shadow: 0 0 2vw gray;
       color:white;
+    padding: 0;
+    margin: 0 4.5vw;
    }
 
    .roundButton:hover{
@@ -25,6 +32,12 @@
        border-radius: 14vw;
        margin: 0vw;
    }
+
+  .ion-icon-class{
+      display: inline-block;
+    padding: 0;
+    vertical-align: middle;
+  }
 
    .flexWrap{
        -webkit-flex-wrap: wrap;
