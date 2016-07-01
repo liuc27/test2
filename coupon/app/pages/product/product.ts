@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {Platform, ActionSheet, NavController,NavParams} from 'ionic-angular';
+import {Platform, Events, ActionSheet, NavController,NavParams} from 'ionic-angular';
 import {ProductService} from '../../providers/product-getAllProducts-service/product-getAllProducts-service';
-import {ProductDetails} from './productDetails/productDetails';
+import {ProductLists} from './productLists/productLists';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class ProductPage {
   public product:any;
 
 
-  constructor(private navController:NavController, 
+  constructor(private navController:NavController,
               private params:NavParams,
               public productService:ProductService,
               public platform:Platform) {
@@ -76,9 +76,9 @@ export class ProductPage {
     this.navController.present(actionSheet);
 
   }
-  
-  openProductDetailsPage(product){
-    this.navController.push(ProductDetails,{product:product});
+
+  openProductListsPage(product){
+    this.navController.push(ProductLists,{product:product});
   }
 
 }

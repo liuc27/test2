@@ -6,10 +6,10 @@ import {NavController, NavParams} from 'ionic-angular';
 
 
 @Component({
-    templateUrl: 'build/pages/product/productDetails/popoverPages/location.html',
+    templateUrl: 'build/pages/product/productLists/popoverPages/category.html',
 })
 
-export class Location {
+export class Category {
     background: string;
     contentEle: any;
     textEle: any;
@@ -33,8 +33,8 @@ export class Location {
             'fg': 'rgb(255, 255, 255)'
         },
     };
-    
-    constructor(private navParams: NavParams) {
+
+    constructor(private navParams: NavParams, private nav:NavController) {
 
     }
 
@@ -79,6 +79,9 @@ export class Location {
     }
 
     changeFontFamily() {
-        if (this.fontFamily) this.textEle.style.fontFamily = this.fontFamily;
+        if (this.fontFamily) {
+            this.textEle.style.fontFamily = this.fontFamily;
+
+        }
     }
 }

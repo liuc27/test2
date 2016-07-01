@@ -1,6 +1,5 @@
 .shop {
-}
-.card-background-page {
+
 
   ion-card {
     position: relative;
@@ -22,6 +21,14 @@
     top: 52%;
     width: 100%;
     color: #fff;
+  }
+
+  .buttonInMenu{
+    display: table-cell;
+    margin: 0!important;
+    padding: 0!important;
+    width: 34vw;
+    text-align:center;
   }
 
 }
