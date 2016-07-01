@@ -13,7 +13,7 @@ export class ProductPage {
   public product:any;
 
 
-  constructor(private navController:NavController,
+  constructor(private nav:NavController,
               private params:NavParams,
               public productService:ProductService,
               public platform:Platform) {
@@ -73,12 +73,12 @@ export class ProductPage {
       ]
     });
 
-    this.navController.present(actionSheet);
+    this.nav.present(actionSheet);
 
   }
 
   openProductListsPage(product){
-    this.navController.push(ProductLists,{product:product});
+    this.nav.push(ProductLists,{product:product});
   }
 
 }

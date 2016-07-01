@@ -6,45 +6,37 @@ import {Page,App, Events, NavController, NavParams, Popover,} from 'ionic-angula
 import {Category} from "./popoverPages/category";
 import {Location} from "./popoverPages/location";
 import {Order} from "./popoverPages/order";
-import {ShopGetAllShopsService} from '../../providers/shop-get-all-shops-service/shop-get-all-shops-service';
-import {ShopLists} from './shopLists/shopLists';
+import {getSelectedShopLists} from '../../../providers/shopLists-GetSelectedShopLists-service/shopLists-GetSelectedShopLists-service';
 
 @Component({
-    templateUrl: 'build/pages/shop/shop.html',
-    providers: [ShopGetAllShopsService]
+    templateUrl: 'build/pages/shop/shopLists/shopLists.html',
+    providers:[getSelectedShopLists]
 })
-export class ShopPage {
+export class ShopLists {
     @ViewChild('popoverContent', {read: ElementRef}) content: ElementRef;
     @ViewChild('popoverText', {read: ElementRef}) text: ElementRef;
-    product;
-    productOrShop;
     shop;
-    shops;
+    productOrShop;
+    shopLists;
 
     constructor(private params: NavParams,
     private nav:NavController,
     private events: Events,
-    private shopGetAllShopsService:ShopGetAllShopsService) {
-        this.product = params.data.product;
-        this.productOrShop = "product";
+    public shopListsService:getSelectedShopLists) {
+        this.shop = params.data.shop;
+        this.productOrShop = "shop";
         console.log(params.data);
-        this.shop=params.data.shop;
-        this.loadShops();
+        this.loadSelectedShopLists();
     }
 
-
-    loadShops(){
-      this.shopGetAllShopsService.load()
-        .then(data => {
-          this.shops = data;
-        })
+    loadSelectedShopLists() {
+      this.shopListsService.load()
+          .then(data => {
+            this.shopLists = data;
+            console.log(this.shopLists);
+          });
     }
 
-    openshopDetailPage(shop){
-        console.log(shop);
-        this.nav.push(ShopLists,{shop:shop});
-
-    }
     presentCategoryPopover(ev) {
         let category = Popover.create(Category, {
             contentEle: this.content.nativeElement,
@@ -81,4 +73,17 @@ export class ShopPage {
         });
     }
 
+    onPageWillEnter() {
+      this.hideTabs();
+    }
+
+    hideTabs(){
+      console.log("enter");
+      this.events.publish('hideTabs');
+    }
+
+    showTabs() {
+      console.log("leave")
+      this.events.publish('showTabs');
+    }
 }

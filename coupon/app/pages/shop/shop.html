@@ -41,7 +41,7 @@
 
     <div [ngSwitch]="productOrShop">
       <ion-list>
-        <ion-item *ngFor="let shop of shops">
+        <ion-item *ngFor="let shop of shops"  (click)="openshopDetailPage(shop)">
           <ion-thumbnail item-left>
             <img src="{{shop.picture.thumbnail}}">
           </ion-thumbnail>
